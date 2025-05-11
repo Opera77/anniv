@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joyeux anniversaire Milodie</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+    
+</head>
+<body>
+    <!-- Music notification -->
+    <div id="music-notification" class="music-notification">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 18V5l12-2v13"></path>
+            <circle cx="6" cy="18" r="3"></circle>
+            <circle cx="18" cy="16" r="3"></circle>
+        </svg>
+        Cliquez n'importe où pour activer la musique
+    </div>
+
+    <!--  container Particles -->
+    <div class="particles-container"></div>
+
+    <!-- container Rose -->
+    <div class="rose-petals"></div>
+
+    <!-- Audio  -->
+    <div class="audio-player soft-glow">
+        <button id="audio-toggle" class="audio-toggle">
+            <svg class="music-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 18V5l12-2v13"></path>
+                <circle cx="6" cy="18" r="3"></circle>
+                <circle cx="18" cy="16" r="3"></circle>
+            </svg>
+            <svg id="play-icon" class="control-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polygon points="10 8 16 12 10 16 10 8"></polygon>
+            </svg>
+            <svg id="pause-icon" class="control-icon hidden" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="10" y1="15" x2="10" y2="9"></line>
+                <line x1="14" y1="15" x2="14" y2="9"></line>
+            </svg>
+        </button>
+        <audio id="background-music" loop>
+            <source src="images/anniv.mp3" type="audio/mp3">
+        </audio>
+    </div>
+
+    <!-- premier section -->
+    <section class="hero-section">
+        <div class="floating-hearts">
+        </div>
+
+        <h1 class="hero-title">Joyeux anniversaire adele mon amour !</h1>
+        <p class="hero-subtitle">En ce jour spécial, je tiens à célébrer la personne extraordinaire que tu es et toute la joie que tu apportes à ma vie. Que ta journée soit remplie d'amour, de rires et de beaux souvenirs.</p>
+
+        <div class="scroll-indicator">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- section Message -->
+    <section class="message-section">
+        <div class="container">
+            <h2 class="section-title">Un message pour toi</h2>
+            <div class="message-card soft-glow">
+                <p class="message-text"> Ton sourire illumine mon monde et ton rire est la plus douce des mélodies. En ce jour spécial, je veux que tu saches combien tu comptes pour moi. Tu as apporté tant de joie et de bonheur dans ma vie. Chaque sourire, chaque rire, chaque moment partagé ensemble est précieux pour moi. Joyeux anniversaire, mon amour bb adele !</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- section text -->
+    <section id="romantic-section" class="lyrics-section">
+        <div class="lyrics-background"></div>
+        <h2 class="section-title">Tu sais </h2>
+        <div class="lyrics-container soft-glow">
+            <p id="lyrics-text" class="lyrics-text">Dans tes yeux, j'ai trouvé le reflet de tous mes rêves</p>
+        </div>
+    </section>
+
+    <!-- section Video -->
+    <section class="video-section">
+        <h2 class="section-title"> Ton sublime sourire</h2>
+        <div class="video-container soft-glow">
+            <div class="video-wrapper">
+                 <video src=""></video>
+                <iframe id="milodie-video" src="about:blank" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="smile-lyrics soft-glow">
+            <p>Est comme le lever du soleil, il réchauffe ma journée.<br>
+            Il illumine les recoins les plus sombres de mon cœur.<br>
+            La façon dont tes yeux se plissent de joie, dont ton visage rayonne,<br>
+            C'est un trésor que je chéris profondément, plus que tu ne le sauras jamais.</p>
+        </div>
+    </section>
+
+    <!-- section gateau -->
+    <section class="cake-section">
+        <h2 class="section-title">Fais un vœu</h2>
+        <br>
+        <br>
+        <div class="cake-container">
+            <div class="cake">
+                <div class="cake-base">
+                    <div class="cake-decoration decoration-1"></div>
+                    <div class="cake-decoration decoration-2"></div>
+                    <div class="cake-decoration decoration-3"></div>
+                    <div class="cake-decoration decoration-4"></div>
+                    <div class="cake-decoration decoration-5"></div>
+                </div>
+                <div class="cake-middle"></div>
+                <div class="cake-top"></div>
+                <div class="candle candle-1"></div>
+                <div class="candle candle-2"></div>
+                <div class="candle candle-3"></div>
+                <div class="flame flame-1"></div>
+                <div class="flame flame-2"></div>
+                <div class="flame flame-3"></div>
+            </div>
+            <p class="cake-wish">Que tous vos souhaits se réalisent !</p>
+        </div>
+    </section>
+
+    <!--  section carousel-->
+    <section class="carousel-section">
+        <h2 class="section-title">La beauté que j'admire</h2>
+
+        <div class="carousel-container soft-glow">
+            <div class="carousel-slides">
+                <div class="carousel-slide active">
+                    <img src="images/photo1.jpg" alt="">
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/photo2.jpg" alt="">
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/photo3.jpg" alt="">
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/photo4.jpg" alt="">
+                </div>SS
+            </div>
+
+            <button class="carousel-btn prev-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M15 19l-7-7 7-7"></path>
+                </svg>
+            </button>
+
+            <button class="carousel-btn next-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 5l7 7-7 7"></path>
+                </svg>
+            </button>
+
+            <div class="carousel-indicators">
+                <button class="carousel-indicator active" onclick="goToSlide(0)"></button>
+                <button class="carousel-indicator" onclick="goToSlide(1)"></button>
+                <button class="carousel-indicator" onclick="goToSlide(2)"></button>
+                <button class="carousel-indicator" onclick="goToSlide(3)"></button>
+                <button class="carousel-indicator" onclick="goToSlide(4)"></button>
+            </div>
+        </div>
+    </section>
+
+    <!--  section Memoire -->
+    <section class="memories-section">
+        <h2 class="section-title">Mots spéciaux</h2>
+
+        <div class="memories-grid">
+            <div class="memory-item soft-glow">
+                <div class="memory-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="#f9a8d4" stroke="#f9a8d4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                </div>
+                <h3 class="memory-title"></h3>
+                <p class="memory-text">Aujourd’hui, le ciel lui-même semble sourire,
+                    Comme s’il savait que c’est ton jour à toi,
+                    La douceur du vent, la tendresse du soleil,
+                    Tout me ramène à toi, ma lumière, ma foi.
+                </p>
+            </div>
+            <div class="memory-item soft-glow">
+                <div class="memory-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="#f9a8d4" stroke="#f9a8d4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                </div>
+                <h3 class="memory-title"></h3>
+                <p class="memory-text">Dans le jardin des souvenirs, aujourd'hui éclot une étoile,
+                    Chaque sourire, un pétale, chaque rire, une toile,
+                    Joyeux anniversaire, que la joie te dévoile !
+                </p>
+            </div>
+            <div class="memory-item soft-glow">
+                <div class="memory-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="#f9a8d4" stroke="#f9a8d4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                </div>
+                <h3 class="memory-title"></h3>
+                <p class="memory-text">Une année de plus, et pourtant,
+                    Tu restes ce miracle que le temps ne touche pas,
+                    Belle comme une étoile qui danse lentement,
+                    Douce comme un rêve qu’on ne quitte pas.
+                </p>
+            </div>
+            <div class="memory-item soft-glow">
+                <div class="memory-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="#f9a8d4" stroke="#f9a8d4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                </div>
+                <h3 class="memory-title"></h3>
+                <p class="memory-text">Ton rire est une musique qui apaise l’univers,
+                    Ta voix, un refrain que mon cœur chante sans fin.
+                    adele…
+                </p>
+            </div>
+            <div class="memory-item soft-glow">
+                <div class="memory-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="#f9a8d4" stroke="#f9a8d4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                </div>
+                <h3 class="memory-title"></h3>
+                <p class="memory-text">En ce jour sacré, je te souhaite tout :
+                    L’amour que tu sèmes, qu’il te revienne toujours.
+                    Que ton chemin soit parsemé de roses,
+                    Et que mon amour y soit ton éternel détour.
+                </p>
+            </div>
+            <div class="memory-item soft-glow">
+                <div class="memory-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="#f9a8d4" stroke="#f9a8d4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                </div>
+                <h3 class="memory-title"></h3>
+                <p class="memory-text">Que cette nouvelle année de ta vie t’apporte des sourires, des rêves réalisés et tout le bonheur que tu mérites. 🌟</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <h2 class="footer-title">Avec tout mon amour adele!</h2>
+        <p class="footer-message">Je te souhaite le plus joyeux anniversaire et une année remplie de joie, d’amour et de beaux souvenirs.</p>
+        <div class="footer-hearts">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#f9a8d4" stroke="#f9a8d4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#f9a8d4" stroke="#f9a8d4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#f9a8d4" stroke="#f9a8d4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#f9a8d4" stroke="#f9a8d4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#f9a8d4" stroke="#f9a8d4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+        </div>
+        <p class="footer-signature">Fait avec amour pour le jour spécial pascal ❤️</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
